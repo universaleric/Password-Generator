@@ -48,7 +48,16 @@ function generatePassword() {
     console.log(setOfChar);
   }
 
-  
+  for (let i = 0; i < passLength; i++) {
+    let charSelection = Math.floor(Math.random() * setOfChar.length);
+    charSelection = setOfChar[charSelection];
+    password = password.concat(charSelection);
+  }
+
+  return password;
+
+}
+
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
